@@ -1,7 +1,6 @@
 
 import re
-import anthropic
-import httpx
+#import anthropic need to be solved
 import streamlit as st
 import subprocess
 import os
@@ -105,11 +104,11 @@ def generate_report(input_file,model,client):
     # Step 5: Select Random Screenshot and Update CSV 
     csv_file_path = f"{folder_path}{input_name}_audio_transcriptions.csv"
     output_csv_file_path = f"{folder_path}{input_name}_updated_transcriptions.csv"
-    #select_random_screenshot_and_update_csv(screenshot_folder, csv_file_path, output_csv_file_path)
-    select_random_screenshot_and_update_csv_claude(screenshot_folder, csv_file_path, output_csv_file_path,model,client)
+    select_random_screenshot_and_update_csv(screenshot_folder, csv_file_path, output_csv_file_path)
+    #select_random_screenshot_and_update_csv_claude(screenshot_folder, csv_file_path, output_csv_file_path,model,client)
     # Step 5.5 - summerize everything
-    #sum = summarize(output_csv_file_path)
-    sum = summarize_claude(output_csv_file_path,model,client)
+    sum = summarize(output_csv_file_path)
+    #sum = summarize_claude(output_csv_file_path,model,client)
     # Step 6: Convert CSV to HTML
 
     #csv_to_html(output_csv_file_path, html_file_path, screenshot_folder)
@@ -417,9 +416,10 @@ def main():
     
     # Token is required to proceed
     token = st.sidebar.text_input("Enter Claude API Key", type="password", help="This field is required.")
-    client = anthropic.Anthropic(
+    client = "need to be fixed"
+    """client = anthropic.Anthropic(
     api_key=token
-)
+    )"""
     # Model selection dropdown
     model_options = ["claude-3-opus-20240229", "claude-3-sonnet-20240229", "claude-3-haiku-20240307"]  # Add your actual model names/options here
     selected_model = st.sidebar.selectbox("Choose a Model", options=model_options)
@@ -437,7 +437,7 @@ def main():
     ready_to_generate = False
 
     if token and (uploaded_file is not None or youtube_url != ""):
-        genai.configure(api_key=token)
+        genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
         st.success("Token verified.")
         
         if uploaded_file is not None:
