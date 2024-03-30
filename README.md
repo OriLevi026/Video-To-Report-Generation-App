@@ -7,7 +7,7 @@ This Streamlit app is designed to generate reports from videos. Users can upload
 - **Video Upload**: Users can upload MP4 video files directly.
 - **YouTube URL Input**: Alternatively, users can input a YouTube URL for the app to process.
 - **Report Generation**: The app generates a detailed report based on the video content.
-- **Model Selection**: Users can select from various Claude models for customized report generation.
+- **Model Selection**: Users can select from various Claude/Google Gemini models for customized report generation.
 
 ## Getting Started
  - to use this you must own a Claude/Google gemini Api Key
@@ -30,4 +30,4 @@ This Streamlit app is designed to generate reports from videos. Users can upload
     ```
 
 ### Usage
-open the streamlit link on run (soon you could try it throgh the link)
+run and open the streamlit link from console (soon you could try it through a link)
