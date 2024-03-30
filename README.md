@@ -10,7 +10,7 @@ This Streamlit app is designed to generate reports from videos. Users can upload
 - **Model Selection**: Users can select from various Claude/Google Gemini models for customized report generation.
 
 ## Getting Started
- - to use this you must own a Claude/Google gemini Api Key
+ - ## to use this you must own a Claude/Google gemini Api Key
 ### Prerequisites
 - Python 3.6 or higher
 - pip
