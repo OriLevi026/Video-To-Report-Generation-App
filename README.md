@@ -1,7 +1,7 @@
 # Video To Report Generation App
 
 ## Overview
-This Streamlit app is designed to generate reports from videos. Users can upload an MP4 video file or provide a YouTube URL, and the app processes the video to generate a comprehensive report. This tool is especially useful for summarizing video content, extracting insights, and converting video data into a more accessible format.
+This app is designed to generate reports from videos. Users can upload an MP4 video file or provide a YouTube URL, and the app processes the video to generate a comprehensive report. This tool is especially useful for summarizing video content, extracting insights, and converting video data into a more accessible format.
 
 ## Features
 - **Video Upload**: Users can upload MP4 video files directly.
@@ -10,7 +10,7 @@ This Streamlit app is designed to generate reports from videos. Users can upload
 - **Model Selection**: Users can select from various Claude/Google Gemini models for customized report generation.
 
 ## Getting Started
- - ## to use this you must own a Claude/Google gemini Api Key
+ - ## to use this you must own a Google gemini Api Key
 ### Prerequisites
 - Python 3.6 or higher
 - pip
@@ -30,4 +30,4 @@ This Streamlit app is designed to generate reports from videos. Users can upload
     ```
 
 ### Usage
-run and open the streamlit link from console (soon you could try it through a link)
+run and open the HTML file in your browser for results
