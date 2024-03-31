@@ -25,14 +25,14 @@ def process_video(input_video_path, Gemini_Api_Key):
         # Truncate to the max_length
         return filename[:max_length]
 
-    def download_youtube_video(url, path):
+    def download_youtube_video(url):
         try:
             yt = YouTube(url)
             stream = yt.streams.get_highest_resolution()
             
             # Sanitize the title
             sanitized_title = f"{sanitize_filename(yt.title)}.mp4"
-            
+            path = sanitized_title[0:-4]
             # Download the video
             stream.download(output_path=path, filename=sanitized_title)
             
@@ -225,6 +225,10 @@ def process_video(input_video_path, Gemini_Api_Key):
             input_video_path = download_youtube_video(input_video_path)
         return input_video_path
     
+
+    # Step 0: YouTube Url or Actual file
+    input_video_path = urlOrFile(input_video_path)
+
     # Create a subfolder with the basename of the input video path
     video_folder_name = os.path.basename(input_video_path).split('.')[0]
     #video_folder_path = os.path.join(output_folder, video_folder_name)
@@ -238,9 +242,6 @@ def process_video(input_video_path, Gemini_Api_Key):
     csv_file_path = os.path.join(video_folder_name, 'transcriptions.csv')
     output_csv_file_path = os.path.join(video_folder_name, 'updated_transcriptions.csv')
     html_file_path = os.path.join(video_folder_name, 'output.html')
-
-    # Step 0: YouTube Url or Actual file
-    input_video_path = urlOrFile(input_video_path)
 
     # Step 1: Extract Audio
     extract_audio_ffmpeg(input_video_path, audio_output)
