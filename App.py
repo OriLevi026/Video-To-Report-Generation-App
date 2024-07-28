@@ -270,5 +270,5 @@ def process_video(input_video_path, Gemini_Api_Key):
     
 # Input -> YouTube URL or directory of a file, Output -> HTML file, just open it with browser
 input_video_path = 'The_Perfect_Snowball.mp4'
-Gemini_Api_Key = 'GoogSyDim1J1f_zqlkeyKeyukcgXCn0o62Tqoaw'
+Gemini_Api_Key = 'ENTER_YOUR_KEY_HERE'
 process_video(input_video_path, Gemini_Api_Key)
